@@ -19,7 +19,9 @@ public class ApiController {
     @GetMapping
     public String sayHello(){
 
-        String requestUrl = "http://"+serviceBUrl+":"+serviceBPort+"/api/v1";
+        System.out.println("url:"+serviceBUrl);
+        System.out.println("port:"+serviceBPort);
+        String requestUrl = "http://"+serviceBUrl+":8081/api/v1";
 
         RestTemplate restTemplate = new RestTemplate();
         String forObject = restTemplate.getForObject(requestUrl, String.class);
